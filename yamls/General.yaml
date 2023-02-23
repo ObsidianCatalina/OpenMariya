@@ -1,7 +1,7 @@
 bot_qq : 2946761346
 verifyKey : "Catalina"
 setuapi : "https://iw233.cn/API/Random.php" 
-
+setuapi1 : "https://api.jiecs.top/lolicon?r18=0"
 ban_group : [
 
 

@@ -9,27 +9,27 @@ from graia.saya import Channel
 from graia.saya.builtins.broadcast.schema import ListenerSchema
 import botmanager
 import  langmanager
-url = botmanager.bot_config('setuapi')
+url = botmanager.bot_config('setuapi1')
 ban_group = botmanager.bot_config('ban_group')
 ban_user = botmanager.bot_config('ban_user')
 channel = Channel.current()
-channel.name("Random acg photo")
-channel.description("Just Random acg photo")
+channel.name("Photo acg aléatoire")
+channel.description("Juste photo acg aléatoire")
 channel.author("ObsidianCatalina")
 @channel.use(
     ListenerSchema(
         listening_events=[GroupMessage],
-        decorators=[MatchContent("acgphoto")],
+        decorators=[MatchContent("acg_aléatoire")],
     )
 )
 async def setu(app: Ariadne, group: Group, event: GroupMessage):
-   if langmanager.en_us==1:
+   if langmanager.fr_fr==1:
     if group.id in ban_group:
         await app.send_message(
             group,
-            MessageChain(At(event.sender.id), " Sorry,This group is disabled the feature. Because at Developer's require"))
+            MessageChain(At(event.sender.id), " Désolé, ce groupe a désactivé la fonctionnalité. Parce que chez les développeurs exigent"))
     elif event.sender.id in ban_user:
-        await app.send_message(group, MessageChain(At(event.sender.id), " Sorry,You have been banned from using this feature. Because at Developer's require"))
+        await app.send_message(group, MessageChain(At(event.sender.id), " Désolé, vous avez été interdit d'utiliser cette fonctionnalité. Parce que chez les développeurs exigent"))
     else:
         async with ClientSession() as session:
             async with session.get(url) as response:
@@ -37,5 +37,5 @@ async def setu(app: Ariadne, group: Group, event: GroupMessage):
         await app.send_group_message(group, MessageChain(Image(data_bytes=data)))
  
    else :
-    await app.send_group_message(group, MessageChain(At(event.sender.id)," The language(en_us) is not available.If you installed it,you can type 'Lang --set-default-lang = xx_xx'"))
+     await app.send_group_message(group, MessageChain(At(event.sender.id)," La Langue(fr_fr) est non disponible si vous Installé il,tu pouvoir type 'Lang --set-default-lang = xx_xx'"))
    
