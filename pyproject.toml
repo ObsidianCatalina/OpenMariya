@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "openmariya"
+version = "0.1.0"
+description = ""
+authors = ["None"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+graia-ariadne = {extras = ["standard"], version = "^0.10.3"}
+loguru = "^0.6.0"
+pyyaml = "^6.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[[tool.poetry.source]]
+name = "tuna-tsinghua"
+url = "https://pypi.tuna.tsinghua.edu.cn/simple"
+default = false
