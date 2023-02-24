@@ -27,9 +27,9 @@ async def setu(app: Ariadne, group: Group, event: GroupMessage):
     if group.id in ban_group:
         await app.send_message(
             group,
-            MessageChain(At(event.sender.id), " Sorry,This group is disabled the feature. Because at Developer's require"))
+            MessageChain(At(event.sender.id), " Sorry,This group is disabled the feature. Because at Developer's requièrent"))
     elif event.sender.id in ban_user:
-        await app.send_message(group, MessageChain(At(event.sender.id), " Sorry,You have been banned from using this feature. Because at Developer's require"))
+        await app.send_message(group, MessageChain(At(event.sender.id), " Sorry,You have been banned from using this feature. Because at Developer's requièrent"))
     else:
         async with ClientSession() as session:
             async with session.get(url) as response:
