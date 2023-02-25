@@ -23,7 +23,7 @@ channel.author("ObsidianCatalina")
 async def linux(app: Ariadne, group: Group, event: GroupMessage):
  if event.sender.id in su:
     langmanager.zh_cn=1
-    langmanager.zh_hk=1
+    langmanager.zh_hk=0
     langmanager.en_us=0
     langmanager.fr_fr=0
     langmanager.ru_ru=0

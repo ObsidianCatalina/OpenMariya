@@ -209,7 +209,7 @@ async def linux(app: Ariadne, group: Group, event: GroupMessage):
    if event.sender.id in su: 
     await app.send_message(
         group,
-        MessageChain(At(event.sender.id)," Installed language:\nChinese Simplified(China Mainland)\nEnglish(United States)\nFrench(France Republic)\nRussian(Russian Federation)\nSpanish(Spain)\nJapanese(Japan)\nKorean(Republic of Korea/South Korerea)\nChinese Chinese Traditional(PRC SAR HongKong)")
+        MessageChain(At(event.sender.id)," Installed language:\nChinese Simplified(China Mainland/PRC)\nEnglish(United States)\nFrench(French Republic)\nRussian(Russian Federation)\nSpanish(Spain)\nJapanese(Japan)\nKorean(Republic of Korea/South Korerea)\nChinese Chinese Traditional(PRC SAR HongKong)")
      )
    else:
     await app.send_message(group,MessageChain(At(event.sender.id)," You don't have check privileges")) 

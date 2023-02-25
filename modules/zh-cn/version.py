@@ -16,7 +16,7 @@ channel = Channel.current()
 channel.name("版本查询")
 channel.description("查看机器人当前版本")
 channel.author("ObsidianCatalina")
-txt="当前装载版本为Mariya Beta 1.0.0\n"
+txt="当前装载版本为Mariya Stable 1.2.7\n"
 
 @channel.use(
 
