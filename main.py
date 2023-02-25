@@ -1,11 +1,12 @@
-import pkgutil
 import os
+
 from creart import create
 from graia.ariadne.app import Ariadne
 from graia.ariadne.connection.config import config
 from graia.broadcast import Broadcast
 from graia.saya import Saya
 from loguru import logger
+
 import botmanager
 
 saya = create(Saya)
