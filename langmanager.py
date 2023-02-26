@@ -12,7 +12,7 @@ import botmanager
 su = botmanager.bot_config('su')
 lang = {
     "zh_cn": (" Bot默认语言已更改为简体中文(中国大陆)", " 默认语言已是简体中文(中国大陆)，无需更改"),
-    "zh_hk": (" Bot語言已更改為繁體中文（中華人民共和國香港特別行政區）", " 默認語言已是簡體中文（中國大陸），無需更改"),
+    "zh_hk": (" Bot語言已更改為繁體中文（中華人民共和國香港特別行政區）", " 默認語言已是繁體中文（中華人民共和國香港特別行政區），無需更改"),
     "en_us": (" Now bot default language is English(United States)", " Bot default language is English(United States) now,Don't need Change"),
     "fr_fr": (" Maintenant bot par défaut langue est Français(République française)", " Bot par défaut langue est  Français(République française),Pas besoin changer"),
     "ru_ru": (" теперь Язык бота по умолчанию российской(Российская Федерация)", " Язык бота по умолчанию российской(Российская Федерация) сейчас. Не нужно изменить"),
@@ -42,6 +42,8 @@ async def change_lang(app: Ariadne, group: Group, event: GroupMessage, message: 
         else:
             await app.send_message(group, MessageChain(At(event.sender.id),
                                                        lang[enable_lang][1]))
+    else:
+        await app.send_message(group, MessageChain(At(event.sender.id)," Cannot find the language"))
 
 
 @channel.use(
@@ -50,7 +52,7 @@ async def change_lang(app: Ariadne, group: Group, event: GroupMessage, message: 
         decorators=[MatchContent("Lang --list-a")],
     )
 )
-async def linux(app: Ariadne, group: Group, event: GroupMessage):
+async def Lang_list(app: Ariadne, group: Group, event: GroupMessage):
     if event.sender.id in su:
         await app.send_message(
             group,

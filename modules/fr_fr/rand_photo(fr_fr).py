@@ -8,7 +8,7 @@ from graia.ariadne.model import Group
 from graia.saya import Channel
 from graia.saya.builtins.broadcast.schema import ListenerSchema
 import botmanager
-from modules import langmanager
+import langmanager
 
 url = botmanager.bot_config('setuapi1')
 ban_group = botmanager.bot_config('ban_group')

@@ -9,7 +9,7 @@ from graia.ariadne.model import Group
 from graia.saya import Channel
 from graia.saya.builtins.broadcast.schema import ListenerSchema
 import botmanager
-from modules import langmanager
+import langmanager
 
 r = botmanager.sents_config('rand_sents_fr', lang='fr-fr')
 channel = Channel.current()

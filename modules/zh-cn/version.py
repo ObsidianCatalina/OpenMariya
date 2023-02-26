@@ -9,9 +9,9 @@ from graia.ariadne.model import Group
 from graia.saya import Channel
 from graia.saya.builtins.broadcast.schema import ListenerSchema
 import botmanager
-from modules import langmanager
+import langmanager
 
-r = botmanager.sents_config('rand_sents', lang='zh_cn')
+r = botmanager.sents_config('rand_sents', lang='zh-cn')
 channel = Channel.current()
 channel.name("版本查询")
 channel.description("查看机器人当前版本")

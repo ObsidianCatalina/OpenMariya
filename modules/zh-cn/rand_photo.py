@@ -8,7 +8,7 @@ from graia.ariadne.model import Group
 from graia.saya import Channel
 from graia.saya.builtins.broadcast.schema import ListenerSchema
 import botmanager
-from modules import langmanager
+import langmanager
 
 url = botmanager.bot_config('setuapi')
 ban_group = botmanager.bot_config('ban_group')
@@ -26,7 +26,7 @@ channel.author("ObsidianCatalina")
     )
 )
 async def setu(app: Ariadne, group: Group, event: GroupMessage):
-    if langmanager == "zh_cn":
+    if langmanager.enable_lang == "zh_cn":
         if group.id in ban_group:
             await app.send_message(
                 group,

@@ -11,24 +11,24 @@ from graia.saya.builtins.broadcast.schema import ListenerSchema
 import botmanager
 import langmanager
 
-r = botmanager.sents_config('rand_sents_en', lang='en-us')
+r = botmanager.sents_config('rand_sents_ru', lang='ru-ru')
 channel = Channel.current()
-channel.name("ver_check")
-channel.description("check bot version")
+channel.name("Вид Версия")
+channel.description("Просмотр текущей версии бота")
 channel.author("ObsidianCatalina")
-txt = "Now the bot version is Mariya Stable 1.2.7\n"
+txt = "Текущая версия монтирования Mariya Stable 1.2.7\n"
 
 
 @channel.use(
 
     ListenerSchema(
         listening_events=[GroupMessage],
-        decorators=[MatchContent("ver_check")]
+        decorators=[MatchContent("Вид Версия")]
     )
 )
 async def bot_version(app: Ariadne, group: Group, event: GroupMessage):
-    if langmanager.enable_lang == "en_us":
+    if langmanager.enable_lang == "ru_ru":
         await app.send_message(group, MessageChain([txt, "------------\n", Plain(random.choice([r][0]))]))
     else:
         await app.send_group_message(group, MessageChain(At(event.sender.id),
-                                                         " The language(es_es) is not available.If you installed it,you can type 'Lang --set-default-lang = xx_xx'"))
+                                                         " Этот язык (ru_ru) недоступен, введите его, если убедитесь, что он установлен'Lang --set-default-lang = xx_xx'"))
