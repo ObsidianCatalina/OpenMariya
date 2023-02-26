@@ -11,7 +11,7 @@ import langmanager
 su = botmanager.bot_config('su')
 channel = Channel.current()
 channel.name("Factory Test -REC")
-channel.description("Recovery Bot All setting")
+channel.description("Recovery Bot All settings")
 channel.author("ObsidianCatalina")
 channel = Channel.current()
 
